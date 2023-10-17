@@ -19,6 +19,7 @@ public class MaterialImpactHandler : MonoBehaviour
     //public PhysicMaterial honeyPhysic;
     public PhysicMaterial rubberPhysic;
     public PhysicMaterial icePhysic;
+    public PhysicMaterial honeyPhysic; 
     //public PhysicMaterial metalPhysic;
     //public PhysicMaterial cardbordPhysic;
     
@@ -81,9 +82,9 @@ public class MaterialImpactHandler : MonoBehaviour
     }
     void setHoney() {
         //TODO
-        /* gameObject.GetComponent<MeshRenderer>().material = honeyMaterial;
-        gameObject.GetComponent<Collider>().material = null; 
-        gameObject.GetComponent<Rigidbody>().mass = defaultMass;  */
+        gameObject.GetComponent<MeshRenderer>().material = honeyMaterial;
+        gameObject.GetComponent<Collider>().material = honeyPhysic; 
+        gameObject.GetComponent<Rigidbody>().mass = defaultMass;  
     }
     void setRubber() {
         gameObject.GetComponent<MeshRenderer>().material = rubberMaterial;

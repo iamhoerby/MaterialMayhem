@@ -132,10 +132,11 @@ MonoBehaviour:
   metalMass: 10
   cardbordMass: 0.1
   defaultMaterial: {fileID: 2100000, guid: 37dae05e784934d018bf6f8384ab285c, type: 2}
-  honeyMaterial: {fileID: 0}
+  honeyMaterial: {fileID: 2100000, guid: cbe310491d7444e39978501eedc175fa, type: 2}
   rubberMaterial: {fileID: 2100000, guid: 2dbea4f662d1448a4b0633afb0349596, type: 2}
   iceMaterial: {fileID: 2100000, guid: 5587d7ba8230148579ec73a56128c531, type: 2}
   metalMaterial: {fileID: 2100000, guid: fdfde78a75d004eb89ab955d7ddbcc39, type: 2}
   cardbordMaterial: {fileID: 2100000, guid: 27b65c0b754064af292146295fc04a1b, type: 2}
   rubberPhysic: {fileID: 13400000, guid: 4872a0c2c9e95472abe2d205c301a341, type: 2}
   icePhysic: {fileID: 13400000, guid: 3a787ea25994e42c491d2638a9a22dfc, type: 2}
+  honeyPhysic: {fileID: 13400000, guid: 033e36c3287064a30af4e10b7fd58566, type: 2}
