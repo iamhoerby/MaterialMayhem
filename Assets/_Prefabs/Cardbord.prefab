@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3290862331429401386}
   - component: {fileID: 3290862331429401387}
   - component: {fileID: 3290862331429401380}
-  - component: {fileID: 3290862331429401381}
+  - component: {fileID: 6681518853321412282}
   m_Layer: 0
   m_Name: Cardbord
-  m_TagString: Untagged
+  m_TagString: Morphable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3290862331429401381
+--- !u!114 &6681518853321412282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3290862331429401383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf43dc77b2bf4e5ba256807cdd904d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d3f1dcc91cdc4cde98524e158dd8a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactLimit: 3
+  defaultMass: 1
+  metalMass: 10
+  cardbordMass: 0.1
+  defaultMaterial: {fileID: 2100000, guid: 37dae05e784934d018bf6f8384ab285c, type: 2}
+  honeyMaterial: {fileID: 0}
+  rubberMaterial: {fileID: 2100000, guid: 2dbea4f662d1448a4b0633afb0349596, type: 2}
+  iceMaterial: {fileID: 2100000, guid: 5587d7ba8230148579ec73a56128c531, type: 2}
+  metalMaterial: {fileID: 2100000, guid: fdfde78a75d004eb89ab955d7ddbcc39, type: 2}
+  cardbordMaterial: {fileID: 2100000, guid: 27b65c0b754064af292146295fc04a1b, type: 2}
+  rubberPhysic: {fileID: 13400000, guid: 4872a0c2c9e95472abe2d205c301a341, type: 2}
+  icePhysic: {fileID: 13400000, guid: 3a787ea25994e42c491d2638a9a22dfc, type: 2}
