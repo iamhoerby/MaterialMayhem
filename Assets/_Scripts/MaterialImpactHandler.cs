@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum customMaterial 
+{
+    None,
+    Default, 
+    Honey, 
+    Rubber, 
+    Ice, 
+    Metal, 
+    Cardbord
+}
 public class MaterialImpactHandler : MonoBehaviour
 {
     public float impactLimit = 3.0f; 
@@ -15,21 +25,21 @@ public class MaterialImpactHandler : MonoBehaviour
     public Material iceMaterial; 
     public Material metalMaterial; 
     public Material cardbordMaterial; 
-    //public PhysicMaterial defaultPhysic;
-    //public PhysicMaterial honeyPhysic;
     public PhysicMaterial rubberPhysic;
     public PhysicMaterial icePhysic;
     public PhysicMaterial honeyPhysic; 
+    public PhysicMaterial defaultPhysic;
     //public PhysicMaterial metalPhysic;
     //public PhysicMaterial cardbordPhysic;
     
-    private int currentMaterial; //0: Default; 1: Honey; 2: Rubber; 3: Ice; 4: Metal; 5: Cardbord 
+    public customMaterial currentMaterial; 
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateMaterial(); 
     }
 
     // Update is called once per frame
@@ -37,9 +47,15 @@ public class MaterialImpactHandler : MonoBehaviour
     {
         
     }
+    public void SetMaterial(customMaterial material) {
+        currentMaterial = material; 
+    }
+    public customMaterial GetMaterial() {
+        return currentMaterial;
+    }
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Bullet")) {
-            int newMaterial = other.gameObject.GetComponent<BulletHandler>().GetMaterial(); 
+            customMaterial newMaterial = other.gameObject.GetComponent<BulletHandler>().GetMaterial(); 
             if (newMaterial != currentMaterial) {
                 currentMaterial = newMaterial;
                 UpdateMaterial(); 
@@ -51,22 +67,22 @@ public class MaterialImpactHandler : MonoBehaviour
     void UpdateMaterial() {
         switch (currentMaterial)
         {
-            case 0: 
+            case customMaterial.Default: 
                 setDefault();
                 break;
-            case 1: 
+            case customMaterial.Honey: 
                 setHoney(); 
                 break;
-            case 2: 
+            case customMaterial.Rubber: 
                 setRubber();
                 break;
-            case 3: 
+            case customMaterial.Ice: 
                 setIce();
                 break;
-            case 4: 
+            case customMaterial.Metal: 
                 setMetal();
                 break;
-            case 5: 
+            case customMaterial.Cardbord: 
                 setCardbord();
                 break;
             default: 
@@ -77,11 +93,10 @@ public class MaterialImpactHandler : MonoBehaviour
 
     void setDefault() {
         gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
-        gameObject.GetComponent<Collider>().material = null; 
+        gameObject.GetComponent<Collider>().material = defaultPhysic; 
         gameObject.GetComponent<Rigidbody>().mass = defaultMass; 
     }
     void setHoney() {
-        //TODO
         gameObject.GetComponent<MeshRenderer>().material = honeyMaterial;
         gameObject.GetComponent<Collider>().material = honeyPhysic; 
         gameObject.GetComponent<Rigidbody>().mass = defaultMass;  
@@ -98,33 +113,33 @@ public class MaterialImpactHandler : MonoBehaviour
     }
     void setMetal() {
         gameObject.GetComponent<MeshRenderer>().material = metalMaterial;
-        gameObject.GetComponent<Collider>().material = null; 
+        gameObject.GetComponent<Collider>().material = defaultPhysic; 
         gameObject.GetComponent<Rigidbody>().mass = metalMass; 
     }
     void setCardbord() {
         gameObject.GetComponent<MeshRenderer>().material = cardbordMaterial;
-        gameObject.GetComponent<Collider>().material = null; 
+        gameObject.GetComponent<Collider>().material = defaultPhysic; 
         gameObject.GetComponent<Rigidbody>().mass = cardbordMass; 
     }
     void GetImpactEffect(GameObject other) {
         switch (currentMaterial)
         {
-            case 0: 
+            case customMaterial.Default: 
                 //defaultEffect(other);
                 break;
-            case 1: 
+            case customMaterial.Honey: 
                 //honeyEffect(other); 
                 break;
-            case 2: 
+            case customMaterial.Rubber: 
                 //rubberEffect(other);
                 break;
-            case 3: 
+            case customMaterial.Ice: 
                 //iceEffect(other);
                 break;
-            case 4: 
+            case customMaterial.Metal: 
                 //metalEffect(other);
                 break;
-            case 5: 
+            case customMaterial.Cardbord: 
                 cardbordEffect(other);
                 break;
             default: 
@@ -138,6 +153,7 @@ public class MaterialImpactHandler : MonoBehaviour
         Vector3 direction = gameObject.transform.position - other.transform.position; 
         if (direction.y < 0 && other.GetComponent<Rigidbody>().mass >= 1) {
             Destroy(gameObject);
+
         }
         if (Mathf.Abs(velocityDifference.magnitude) >= impactLimit) {
             Destroy(gameObject); 

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaterialImpactHandler
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 6d3f1dcc91cdc4cde98524e158dd8a04, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: impactLimit
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: defaultMass
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: metalMass
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cardbordMass
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: defaultMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: 37dae05e784934d018bf6f8384ab285c, type: 2}
+  - target: {fileID: 0}
+    propertyPath: honeyMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: cbe310491d7444e39978501eedc175fa, type: 2}
+  - target: {fileID: 0}
+    propertyPath: rubberMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: 2dbea4f662d1448a4b0633afb0349596, type: 2}
+  - target: {fileID: 0}
+    propertyPath: iceMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: 5587d7ba8230148579ec73a56128c531, type: 2}
+  - target: {fileID: 0}
+    propertyPath: metalMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: fdfde78a75d004eb89ab955d7ddbcc39, type: 2}
+  - target: {fileID: 0}
+    propertyPath: cardbordMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: 27b65c0b754064af292146295fc04a1b, type: 2}
+  - target: {fileID: 0}
+    propertyPath: rubberPhysic
+    value: 
+    objectReference: {fileID: 13400000, guid: 4872a0c2c9e95472abe2d205c301a341, type: 2}
+  - target: {fileID: 0}
+    propertyPath: icePhysic
+    value: 
+    objectReference: {fileID: 13400000, guid: 3a787ea25994e42c491d2638a9a22dfc, type: 2}
+  - target: {fileID: 0}
+    propertyPath: honeyPhysic
+    value: 
+    objectReference: {fileID: 13400000, guid: 033e36c3287064a30af4e10b7fd58566, type: 2}
+  - target: {fileID: 0}
+    propertyPath: defaultPhysic
+    value: 
+    objectReference: {fileID: 13400000, guid: 7e99e7717817245a4b25b933e2dd11f1, type: 2}
+  - target: {fileID: 0}
+    propertyPath: currentMaterial
+    value: 2
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

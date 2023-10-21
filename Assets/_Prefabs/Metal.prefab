@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837601018367566730}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7e99e7717817245a4b25b933e2dd11f1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -140,3 +140,5 @@ MonoBehaviour:
   rubberPhysic: {fileID: 13400000, guid: 4872a0c2c9e95472abe2d205c301a341, type: 2}
   icePhysic: {fileID: 13400000, guid: 3a787ea25994e42c491d2638a9a22dfc, type: 2}
   honeyPhysic: {fileID: 13400000, guid: 033e36c3287064a30af4e10b7fd58566, type: 2}
+  defaultPhysic: {fileID: 13400000, guid: 7e99e7717817245a4b25b933e2dd11f1, type: 2}
+  currentMaterial: 5

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletHandler : MonoBehaviour
 {
-    public int currentMaterial = 0; //0: Default; 1: Honey; 2: Rubber; 3: Ice; 4: Metal; 5: Cardbord 
-
+   public customMaterial currentMaterial; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,10 @@ public class BulletHandler : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         Destroy(gameObject);
     }
-    public int GetMaterial() {
+    public customMaterial GetMaterial() {
         return currentMaterial; 
     }
-    public void SetMaterial(int material) {
+    public void SetMaterial(customMaterial material) {
         currentMaterial = material;
     }
 }

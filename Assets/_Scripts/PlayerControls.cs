@@ -10,6 +10,9 @@ public class PlayerControls : MonoBehaviour
     private bool isGrounded = true;
     private Rigidbody rb;
     private Vector3 move;
+    public customMaterial ground; 
+    public float speedVariable = 1.0f;
+    public float jumpVariable = 1.0f; 
 
     void Start()
     {
@@ -30,33 +33,59 @@ public class PlayerControls : MonoBehaviour
 
         if (Mathf.Abs(rb.velocity.x) < maxSpeed)
         {
-            rb.velocity += new Vector3(move.x * moveSpeed, 0, 0);
+            rb.velocity += new Vector3(move.x * moveSpeed * speedVariable, 0, 0);
         }
         if (Mathf.Abs(rb.velocity.z) < maxSpeed)
         {
-            rb.velocity += new Vector3(0, 0, move.z * moveSpeed);
+            rb.velocity += new Vector3(0, 0, move.z * moveSpeed * speedVariable);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Rigidbody rb = GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce * jumpVariable, ForceMode.Impulse);
         }
+        //Update Ground
+        ground = GetComponentInChildren<GroundSensorHandler>().GetMaterial(); 
+        if (ground != customMaterial.None) {
+            isGrounded = true; 
+        } else {
+            isGrounded = false; 
+        }
+        GroundEffect(); 
         
     }
-
-    // Check if the player is on the ground
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
+    private void GroundEffect() {
+         switch (ground)
         {
-            isGrounded = true;
-        }
-    }
-    private void OnCollisionExit(Collision other) {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false; 
+            case customMaterial.Default: 
+                speedVariable = 1.0f; 
+                jumpVariable = 1.0f;
+                break;
+            case customMaterial.Honey: 
+                speedVariable = 1.0f;
+                jumpVariable = 0.2f; 
+                break;
+            case customMaterial.Rubber: 
+                speedVariable = 1.0f;
+                jumpVariable = 1.0f;
+                break;
+            case customMaterial.Ice: 
+                speedVariable = 2.0f;
+                jumpVariable = 1.0f; 
+                break;
+            case customMaterial.Metal: 
+                speedVariable = 1.0f;
+                jumpVariable = 1.0f; 
+                break;
+            case customMaterial.Cardbord: 
+                speedVariable = 1.0f;
+                jumpVariable = 1.0f; 
+                break;
+            default: 
+                speedVariable = 1.0f;
+                jumpVariable = 1.0f; 
+                break; 
         }
     }
 }
