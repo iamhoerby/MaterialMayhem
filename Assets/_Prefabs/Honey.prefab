@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5036496055383095351}
   - component: {fileID: 5036496055383095347}
   - component: {fileID: -7159324147598423436}
+  - component: {fileID: -7097814865653719974}
   m_Layer: 0
   m_Name: Honey
   m_TagString: Morphable
@@ -142,3 +143,16 @@ MonoBehaviour:
   honeyPhysic: {fileID: 13400000, guid: 033e36c3287064a30af4e10b7fd58566, type: 2}
   defaultPhysic: {fileID: 13400000, guid: 7e99e7717817245a4b25b933e2dd11f1, type: 2}
   currentMaterial: 2
+--- !u!65 &-7097814865653719974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036496055383095336}
+  m_Material: {fileID: 13400000, guid: 033e36c3287064a30af4e10b7fd58566, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

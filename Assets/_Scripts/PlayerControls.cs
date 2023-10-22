@@ -11,8 +11,10 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody rb;
     private Vector3 move;
     public customMaterial ground; 
+    public float grabingRange = 10.0f; 
     public float speedVariable = 1.0f;
     public float jumpVariable = 1.0f; 
+    private RaycastHit hit;
 
     void Start()
     {
@@ -53,6 +55,11 @@ public class PlayerControls : MonoBehaviour
             isGrounded = false; 
         }
         GroundEffect(); 
+        //
+        if (Physics.Raycast(transform.position, Vector3.forward,out hit, grabingRange)) {
+            Debug.DrawRay(transform.position, Vector3.forward * hit.distance, Color.red,1.0f);
+            hit.collider.gameObject.GetComponent<FormableHandler>().GetHit(hit);
+        }   
         
     }
     private void GroundEffect() {
