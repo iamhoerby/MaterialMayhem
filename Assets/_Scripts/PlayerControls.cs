@@ -58,7 +58,15 @@ public class PlayerControls : MonoBehaviour
         //
         if (Physics.Raycast(transform.position, Vector3.forward,out hit, grabingRange)) {
             Debug.DrawRay(transform.position, Vector3.forward * hit.distance, Color.red,1.0f);
-            hit.collider.gameObject.GetComponent<FormableHandler>().GetHit(hit);
+            try
+            {
+                hit.collider.gameObject.GetComponent<FormableHandler>().GetHit(hit);
+            }
+            catch (System.NullReferenceException e)
+            {
+                Debug.Log("GameObject not formable");
+            }
+
         }   
         
     }
