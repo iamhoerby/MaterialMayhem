@@ -19,5 +19,6 @@ public class FormableHandler : MonoBehaviour
     }
     public void GetHit(RaycastHit hit) {
         //Grab Mechanics here 
+        Debug.Log("I got hit"); 
     }
 }
