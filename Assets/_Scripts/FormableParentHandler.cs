@@ -10,6 +10,9 @@ public class FormableParentHandler : MonoBehaviour
     public Vector3 newPos = new Vector3(0,0,0);
     public Vector3 newScale = new Vector3(1,1,1);
     public GameObject formableObject; 
+    Vector3[] newVertices;
+    Vector2[] newUV;
+    int[] newTriangles;
     void Start()
     {
         var counter = 0; 
@@ -20,7 +23,12 @@ public class FormableParentHandler : MonoBehaviour
             }
             
         }
-        calculateFaces(); 
+        //calculateFaces(); 
+        Mesh mesh = new Mesh();
+        formableObject.GetComponent<MeshFilter>().mesh = mesh;
+        mesh.vertices = handlesToArray();
+        mesh.uv = newUV;
+        mesh.triangles = newTriangles;
 
     }
 
@@ -28,11 +36,19 @@ public class FormableParentHandler : MonoBehaviour
     void Update()
     {
         //calculateFaces(); 
-        calculateScale();
-        calculatePosition();
-        updateObject(); 
+        //calculateScale();
+        //calculatePosition();
+        //updateObject(); 
         Debug.Log("Position: " + newPos);
         Debug.Log("Scale: " + newScale); 
+        updateVertices(); 
+    }
+    void updateVertices() {
+        Mesh mesh = formableObject.GetComponent<MeshFilter>().mesh;
+        mesh.Clear();
+        mesh.vertices = handlesToArray();
+
+
     }
     void calculateFaces() {
         Dictionary<string, GameObject> newHandles = handles; 
@@ -74,5 +90,16 @@ public class FormableParentHandler : MonoBehaviour
     void updateObject() {
         formableObject.transform.position = newPos; 
         formableObject.transform.localScale = newScale;
+    }
+    Vector3[] handlesToArray() {
+        Vector3[] tmp = new Vector3[handles.Count];
+        int i = 0; 
+        foreach (var obj in handles)
+        {
+            tmp[i] = obj.Value.transform.position;
+            i++;
+        }
+        
+        return tmp;
     }
 }
