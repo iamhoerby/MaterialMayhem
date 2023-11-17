@@ -23,26 +23,33 @@ public class FormableParentHandler : MonoBehaviour
             }
             
         }
-        //calculateFaces(); 
-        Mesh mesh = new Mesh();
-        formableObject.GetComponent<MeshFilter>().mesh = mesh;
-        mesh.vertices = handlesToArray();
-        mesh.uv = newUV;
-        mesh.triangles = newTriangles;
-
+        calculateFaces(); 
+        // Mesh mesh = new Mesh();
+        // formableObject.GetComponent<MeshFilter>().mesh = mesh;
+        
+        // mesh.uv = newUV;
+        // int triangles = triangulate(); 
+        // mesh.vertices = handlesToArray();
+        // mesh.triangles = newTriangles;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //calculateFaces(); 
-        //calculateScale();
-        //calculatePosition();
-        //updateObject(); 
+        calculateScale();
+        calculatePosition();
+        updateObject(); 
         Debug.Log("Position: " + newPos);
         Debug.Log("Scale: " + newScale); 
-        updateVertices(); 
+        //updateVertices(); 
     }
+   /*  int[] triangulate() {
+        int[] result = new int[]; 
+
+        return result; 
+    } */
     void updateVertices() {
         Mesh mesh = formableObject.GetComponent<MeshFilter>().mesh;
         mesh.Clear();
