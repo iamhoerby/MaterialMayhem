@@ -6,21 +6,24 @@ using System.Linq;
 public class HoneyFormable : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject handlePrefab; 
+    public GameObject handlePrefab;
     public Vector3[] vertices; 
     public List<GameObject> handles = new List<GameObject>();
     List<GameObject> verticesHandles = new List<GameObject>();  
     List<GameObject> edgeHandles = new List<GameObject>();
+    public MeshCollider collider; 
     int[] triangles; 
     void Start()
     {
+        handlePrefab = Resources.Load("Handle") as GameObject; 
+
         vertices = GetComponent<MeshFilter>().mesh.vertices;
         triangles = GetComponent<MeshFilter>().mesh.triangles; 
 
         // Initiate handles at every vertice 
         for(int i = 0; i < vertices.Length; i++)
         {
-            GameObject newHandle = Instantiate(handlePrefab, this.transform.position + vertices[i], Quaternion.identity, this.transform);
+            GameObject newHandle = Instantiate(handlePrefab, this.transform.TransformPoint(vertices[i]), Quaternion.identity, this.transform);
             verticesHandles.Add(newHandle); 
             int[] tmp = {i};
             newHandle.GetComponent<HoneyHandle>().AddVertices(tmp);
@@ -45,13 +48,20 @@ public class HoneyFormable : MonoBehaviour
         } 
         edgeHandles = ReduceHandles(edgeHandles); 
         handles = verticesHandles.Union<GameObject>(edgeHandles).ToList<GameObject>();
+        
+        //DestroyImmediate(GetComponent<Collider>());
+        Debug.Log("Add Collider");
+        collider = this.transform.gameObject.AddComponent<MeshCollider>();
+        collider.sharedMesh = this.GetComponent<MeshFilter>().mesh;
+        collider.convex = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateHandlesList(); 
-        // UpdateHandlesPosition(); 
+        UpdateCollider(); 
+        //UpdateHandlesPosition(); 
     }
     // Takes a list of handles 
     // Reduces the Amount of Handles, Merges handles which are close to each other into one handle 
@@ -94,12 +104,15 @@ public class HoneyFormable : MonoBehaviour
         }
         return result; 
     }
+    void UpdateCollider() {
+        collider.sharedMesh = this.GetComponent<MeshFilter>().mesh;
+    }
     public void UpdateHandlesPosition() {
-        foreach (GameObject handle in verticesHandles)
+        /* foreach (GameObject handle in verticesHandles)
         {
             Vector3 newPosition = vertices[handle.GetComponent<HoneyHandle>().GetVertices()[0]]; 
             handle.GetComponent<HoneyHandle>().SetPosition(newPosition);
-        }
+        } */
         foreach (GameObject handle in edgeHandles)
         {
             GameObject[] tmp = handle.GetComponent<HoneyHandle>().GetHandles(); 
@@ -118,5 +131,12 @@ public class HoneyFormable : MonoBehaviour
             vertices[connectedVertices[i]] += movement; 
         }
         GetComponent<MeshFilter>().mesh.vertices = vertices;
+    }
+    public void OnDestroy() {
+        foreach (GameObject handle in handles)
+        {
+            Debug.Log("handle destroy");
+            Destroy(handle); 
+        }
     }
 }

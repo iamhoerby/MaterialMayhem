@@ -57,6 +57,10 @@ public class MaterialImpactHandler : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet")) {
             customMaterial newMaterial = other.gameObject.GetComponent<BulletHandler>().GetMaterial(); 
             if (newMaterial != currentMaterial) {
+                if (currentMaterial == customMaterial.Honey) {
+                    Debug.Log("Destroy Script");
+                    Destroy(this.gameObject.GetComponent<HoneyFormable>());
+                }
                 currentMaterial = newMaterial;
                 UpdateMaterial(); 
             }
@@ -98,8 +102,10 @@ public class MaterialImpactHandler : MonoBehaviour
     }
     void setHoney() {
         gameObject.GetComponent<MeshRenderer>().material = honeyMaterial;
-        gameObject.GetComponent<Collider>().material = honeyPhysic; 
         gameObject.GetComponent<Rigidbody>().mass = defaultMass;  
+        gameObject.AddComponent<HoneyFormable>(); 
+        gameObject.GetComponent<Collider>().material = honeyPhysic; 
+
     }
     void setRubber() {
         gameObject.GetComponent<MeshRenderer>().material = rubberMaterial;
