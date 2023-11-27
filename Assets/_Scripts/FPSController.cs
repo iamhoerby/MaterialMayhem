@@ -98,7 +98,7 @@ public class FPSController : MonoBehaviour
 
             // Spawn a new projectile with the same rotation as the camera
             GameObject newProjectile = Instantiate(projectilePrefab, shootPoint.position, cameraRotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(amera.main.transform.forward * projectileSpeed,ForceMode.Force);
+            newProjectile.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * projectileSpeed,ForceMode.Force);
         }
 
         #endregion
