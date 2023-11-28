@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5036496055383095347}
   - component: {fileID: -7159324147598423436}
   - component: {fileID: -7097814865653719974}
-  - component: {fileID: 3497965174849043371}
   m_Layer: 0
   m_Name: Honey
   m_TagString: Morphable
@@ -157,18 +156,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3497965174849043371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5036496055383095336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc187176bb58428c8c568d646785bed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handlePrefab: {fileID: 4325486189402861266, guid: 5a4404a9a72f2445dbc834784a3bec1d, type: 3}
-  vertices: []
-  handles: []
