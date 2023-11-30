@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Trigger" + other.transform.gameObject.name);
             isPressed = true;
             // You can add visual feedback here, e.g., change color or scale of the button
         }
