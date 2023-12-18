@@ -425,8 +425,48 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6193628864727588934, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_Pull
+      value: 
+      objectReference: {fileID: -946235882529794447, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_Turn
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
       propertyPath: m_Shoot
+      value: 
+      objectReference: {fileID: -946235882529794447, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_SnapTurn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_TeleportModeCancel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383305761870439969, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_TeleportModeActivate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684101981091555850, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_Turn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684101981091555850, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_SnapTurn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684101981091555850, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_TeleportModeCancel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684101981091555850, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+      propertyPath: m_TeleportModeActivate
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7824025855581563167, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
@@ -477,8 +517,40 @@ PrefabInstance:
       propertyPath: m_MoveSpeed
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6193628864727588934, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+--- !u!1 &276649093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2949000353876649627, guid: 215f7fd375bb648ae84001268e29b1e8, type: 3}
+  m_PrefabInstance: {fileID: 276649092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &276649094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276649093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a636fe105a4297801fb09a4e8e11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  pullAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Pull
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 166d3e8f-572a-4e64-bc4f-0ea94612338c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -946235882529794447, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  pullObject: {fileID: 0}
 --- !u!43 &345244404
 Mesh:
   m_ObjectHideFlags: 0
@@ -821,7 +893,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58308
+  m_Name: pb_Mesh27958
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3455,6 +3527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Velocity Tracked Wedge
       objectReference: {fileID: 0}
+    - target: {fileID: 4257412417454173071, guid: d5615d616019430d9c2e8727e71c97fb, type: 3}
+      propertyPath: m_TagString
+      value: Morphable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5615d616019430d9c2e8727e71c97fb, type: 3}
 --- !u!43 &1683462389
@@ -3627,7 +3703,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58610
+  m_Name: pb_Mesh28112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5299,7 +5375,7 @@ GameObject:
   - component: {fileID: 2125672542}
   m_Layer: 0
   m_Name: Prism (1)
-  m_TagString: Untagged
+  m_TagString: Morphable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

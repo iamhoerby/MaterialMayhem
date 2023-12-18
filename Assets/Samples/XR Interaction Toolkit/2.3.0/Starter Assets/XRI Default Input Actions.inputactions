@@ -2066,11 +2066,11 @@
             ]
         },
         {
-            "name": "Shoot",
+            "name": "Pull",
             "id": "e680bb50-ce21-46aa-91fe-efec963adad5",
             "actions": [
                 {
-                    "name": "Shoot",
+                    "name": "Pull",
                     "type": "Button",
                     "id": "162c189c-f6a8-44fd-b8ca-c56e1928b7ce",
                     "expectedControlType": "Button",
@@ -2087,7 +2087,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Shoot",
+                    "action": "Pull",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -2098,7 +2098,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Pull",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
