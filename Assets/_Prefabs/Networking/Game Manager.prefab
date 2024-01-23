@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72199bd1a34044f0fbe6a8d8f0c6e9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pcPrefab: {fileID: 6161050203920135641, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
+  vrPrefab: {fileID: 3497996630522167425, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+  pcSpawn: {fileID: 0}
+  vrSpawn: {fileID: 0}

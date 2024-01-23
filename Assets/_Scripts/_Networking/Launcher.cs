@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime; 
 
@@ -27,7 +28,12 @@ namespace Com.MyCompany.MyGame
         /// This client's version number. Users are separated from each other by gameVersion (which allows you to make breaking changes).
         /// </summary>
         string gameVersion = "1";
-
+        /// <summary>
+        /// Keep track of the current process. Since connection is asynchronous and is based on several callbacks from Photon,
+        /// we need to keep track of this to properly adjust the behavior when we receive call back by Photon.
+        /// Typically this is used for the OnConnectedToMaster() callback.
+        /// </summary>
+        bool isConnecting;
         #endregion
 
         #region MonoBehaviour CallBacks
@@ -74,7 +80,7 @@ namespace Com.MyCompany.MyGame
             else
             {
                 // #Critical, we must first and foremost connect to Photon Online Server.
-                PhotonNetwork.ConnectUsingSettings();
+                isConnecting = PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
             }
         }
@@ -84,13 +90,17 @@ namespace Com.MyCompany.MyGame
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
-            // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-            PhotonNetwork.JoinRandomRoom();
+            if (isConnecting)
+            {
+                // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
+                PhotonNetwork.JoinRandomRoom();
+                isConnecting = false;
+            }
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {   
+            isConnecting = false;
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
@@ -105,10 +115,24 @@ namespace Com.MyCompany.MyGame
 
         public override void OnJoinedRoom()
         {
+            // #Critical: We only load if we are the first player, else we rely on `PhotonNetwork.AutomaticallySyncScene` to sync our instance scene.
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                Debug.Log("Load Tutorial ");
+
+                // #Critical
+                // Load the Room Level.
+                Debug.Log(SceneManager.sceneCountInBuildSettings);
+                PhotonNetwork.LoadLevel(GetSceneNameFromBuildIndex(1));
+            }
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
 
         #endregion
-
+        public static string GetSceneNameFromBuildIndex(int index) {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
+            string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+            return sceneName;
+        }
     }
 }
