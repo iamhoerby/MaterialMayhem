@@ -45,7 +45,7 @@ public class FPSController : MonoBehaviourPunCallbacks
         }
         #region Handles Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 right = transform.TransformDirection(Vector3.right); // aaa
 
         
  
