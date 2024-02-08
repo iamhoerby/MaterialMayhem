@@ -29,7 +29,7 @@ public class FPSController : MonoBehaviourPunCallbacks
     void Start()
     {
         if (photonView.IsMine) {
-            characterController = GetComponent<CharacterController>();
+            characterController = this.GetComponent<CharacterController>();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -44,8 +44,8 @@ public class FPSController : MonoBehaviourPunCallbacks
             return;
         }
         #region Handles Movement
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 forward = this.transform.TransformDirection(Vector3.forward);
+        Vector3 right = this.transform.TransformDirection(Vector3.right);
 
         
  
@@ -76,14 +76,14 @@ public class FPSController : MonoBehaviourPunCallbacks
         #endregion
  
         #region Handles Rotation
-        characterController.Move(moveDirection * Time.deltaTime);
+        this.characterController.Move(moveDirection * Time.deltaTime);
  
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            head.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            this.head.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            this.transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
  
         #endregion

@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 6161050205229640732}
   - component: {fileID: 6161050205229640729}
   - component: {fileID: 6161050205229640731}
+  - component: {fileID: 2785674186152058945}
   m_Layer: 0
   m_Name: PCCamera
   m_TagString: MainCamera
@@ -299,6 +300,23 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161050205229640728}
   m_Enabled: 1
+--- !u!114 &2785674186152058945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161050205229640728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 7
+  height: 3
+  centerOffset: {x: 0, y: 0, z: 0}
+  followOnStart: 0
+  smoothSpeed: 0.125
 --- !u!1 &6161050205292770231
 GameObject:
   m_ObjectHideFlags: 0
