@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb2fc1cbcf164206a0060992f72a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMaterial: 3
+  currentMaterial: 1
   defaultMaterial: {fileID: 2100000, guid: 37dae05e784934d018bf6f8384ab285c, type: 2}
   honeyMaterial: {fileID: 2100000, guid: cbe310491d7444e39978501eedc175fa, type: 2}
   rubberMaterial: {fileID: 2100000, guid: 2dbea4f662d1448a4b0633afb0349596, type: 2}
