@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using Photon.Pun;
+
 [RequireComponent(typeof(CharacterController))]
-public class FPSController : MonoBehaviour
+public class FPSController : MonoBehaviourPunCallbacks
 {
-    public Camera playerCamera;
+    public GameObject head;
     public float walkSpeed = 3f;
     public float runSpeed = 6f;
     public float jumpPower = 1f;
@@ -27,17 +28,22 @@ public class FPSController : MonoBehaviour
     CharacterController characterController;
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (photonView.IsMine) {
+            characterController = GetComponent<CharacterController>();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     
  
     void Update()
     {
- 
-        #region Handles Movment
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
+        #region Handles Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -76,7 +82,7 @@ public class FPSController : MonoBehaviour
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            head.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
  
@@ -94,11 +100,11 @@ public class FPSController : MonoBehaviour
         void ShootProjectile()
         {
             // Get the rotation of the camera
-            Quaternion cameraRotation = Camera.main.transform.rotation;
+            Quaternion headRotation = head.transform.rotation;
 
-            // Spawn a new projectile with the same rotation as the camera
-            GameObject newProjectile = Instantiate(projectilePrefab, shootPoint.position, cameraRotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * projectileSpeed,ForceMode.Force);
+            // Spawn a new projectile with the same rotation as the head
+            GameObject newProjectile = Instantiate(projectilePrefab, shootPoint.position, headRotation);
+            newProjectile.GetComponent<Rigidbody>().AddForce(head.transform.forward * projectileSpeed,ForceMode.Force);
         }
 
         #endregion
