@@ -27,6 +27,9 @@ public class FPSController : MonoBehaviour
     CharacterController characterController;
     void Start()
     {
+        characterController = this.GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     
