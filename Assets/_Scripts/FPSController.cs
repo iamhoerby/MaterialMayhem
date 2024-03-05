@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 [RequireComponent(typeof(CharacterController))]
-public class FPSController : MonoBehaviourPunCallbacks
+public class FPSController : MonoBehaviour
 {
     public GameObject head;
     public float walkSpeed = 3f;
@@ -28,21 +27,12 @@ public class FPSController : MonoBehaviourPunCallbacks
     CharacterController characterController;
     void Start()
     {
-        if (photonView.IsMine) {
-            characterController = GetComponent<CharacterController>();
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
     }
 
     
  
     void Update()
     {
-        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-        {
-            return;
-        }
         #region Handles Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right); // aaa
