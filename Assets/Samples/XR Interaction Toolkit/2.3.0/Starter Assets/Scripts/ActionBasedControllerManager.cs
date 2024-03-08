@@ -64,12 +64,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         InputActionReference m_Move;
 
         [SerializeField]
-        [Tooltip("Shot Action")]
-        InputActionReference m_Shot;
-                
-        [SerializeField]
-        [Tooltip("Jetpack Action")]
-        InputActionReference m_Jetpack;
+        [Tooltip("Pull Action")]
+        InputActionReference m_Pull;
 
         [Space]
         [Header("Locomotion Settings")]
@@ -314,8 +310,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             DisableAction(m_TeleportModeCancel);
             DisableAction(m_Turn);
             DisableAction(m_SnapTurn);
-            DisableAction(m_Shot);
-            DisableAction(m_Jetpack);
+            DisableAction(m_Pull);
         }
 
         static void SetEnabled(InputActionReference actionReference, bool enabled)

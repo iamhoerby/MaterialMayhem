@@ -1507,33 +1507,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Shot",
-                    "type": "Button",
-                    "id": "bf772d8e-6934-48cc-bcb0-321b86e17c11",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Jetpack",
-                    "type": "Button",
-                    "id": "6115da82-9951-4d0c-b1d2-34e654c4309b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchMaterial",
-                    "type": "Button",
-                    "id": "b4e03204-2676-4709-b4f7-bb380f476527",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1622,39 +1595,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "99fffbb5-df2e-4105-b912-237e25423d67",
-                    "path": "<XRController>{RightHand}/triggerPressed",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ee6d2a5a-cbd1-41f2-9a40-6a3eca14a750",
-                    "path": "<XRController>{RightHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jetpack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b7803e68-b04f-4bf0-af88-4f2f3043f3d3",
-                    "path": "<XRController>{RightHand}/secondaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchMaterial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -181,7 +181,6 @@ GameObject:
   - component: {fileID: 1436648569837123276}
   - component: {fileID: 8377294054534189268}
   - component: {fileID: 6193628864727588934}
-  - component: {fileID: 8802945040990942901}
   m_Layer: 0
   m_Name: RightHand (Teleport Locomotion)
   m_TagString: Untagged
@@ -229,8 +228,7 @@ MonoBehaviour:
   m_Turn: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Shot: {fileID: 7067312214411174577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Jetpack: {fileID: -6467949723515440904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_Pull: {fileID: 0}
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 1
 --- !u!114 &2949000353876649631
@@ -248,7 +246,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3475118261464492563, guid: 5bbb77dcb9baf46d9860f196257f71a3, type: 3}
+  m_ModelPrefab: {fileID: 3475118261464492563, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
   m_ModelParent: {fileID: 2949000353876649626}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -486,34 +484,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7067312214411174577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &8802945040990942901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2949000353876649627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378a3e8b33cc44a11bafa76d781d4755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelMax: 30
-  jetpackPower: 10
-  player: {fileID: 4556396666237148998}
-  jetpackAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Jetpack
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: cca18cb3-5b6c-4ad2-a0cc-411813f118d0
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6467949723515440904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -946235882529794447, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &2949000353981040154
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +672,6 @@ GameObject:
   - component: {fileID: 2949000355512346239}
   - component: {fileID: 8833396763520370467}
   - component: {fileID: 2736356129684305366}
-  - component: {fileID: 4470249195030344230}
   m_Layer: 0
   m_Name: LeftHand (Smooth locomotion)
   m_TagString: Untagged
@@ -749,8 +719,7 @@ MonoBehaviour:
   m_Turn: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Shot: {fileID: 0}
-  m_Jetpack: {fileID: 0}
+  m_Pull: {fileID: 0}
   m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
 --- !u!114 &2949000355512346239
@@ -981,32 +950,6 @@ MonoBehaviour:
   - {fileID: 1489350136178554824}
   - {fileID: 658838670374941514}
   - {fileID: 3105544236641962348}
---- !u!114 &4470249195030344230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2949000355512346212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cd97418b2d4294b89abdc79ce3e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  speed: 0
-  shootAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Shoot
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 087b01f9-c49e-40ee-b32e-eb8eedc323be
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!1 &3497996630522167425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1006,7 @@ GameObject:
   - component: {fileID: 9120876427338554868}
   m_Layer: 2
   m_Name: XR Origin
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
