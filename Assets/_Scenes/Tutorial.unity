@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.57217956, g: 0.78577745, b: 0.91023254, a: 1}
+  m_IndirectSpecularColor: {r: 0.5721108, g: 0.78595865, b: 0.9100202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 982832794}
-  newText: <b>Drag</b> and use the small box to climb to the <b><color=yellow>button</color></b>
-  textToBeChanged: {fileID: 686826614}
+  newText: 
+  textToBeChanged: {fileID: 0}
 --- !u!65 &17759971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1306,10 +1306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51382f3736c5a94eaf0f560837dc228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newText: <b>Shoot</b> the <b><color=yellow>yellow</color></b> button to unlock
-    the door
-  targetObject: {fileID: 463198884}
-  textToBeChanged: {fileID: 686826614}
+  newText: 
+  targetObject: {fileID: 0}
+  textToBeChanged: {fileID: 0}
 --- !u!65 &620519843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1593,6 +1592,10 @@ PrefabInstance:
     - target: {fileID: 6161050203920135641, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
       propertyPath: m_Name
       value: PC Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161050203920135641, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6161050203920135642, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
       propertyPath: gravity
@@ -1903,8 +1906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 275481147}
-  newText: Jump and collect the <b><color=red>Material Gun</color></b>
-  textToBeChanged: {fileID: 686826614}
+  newText: 
+  textToBeChanged: {fileID: 0}
 --- !u!65 &868067275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2479,6 +2482,67 @@ Transform:
   m_Father: {fileID: 362851925}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1063439605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3497996630522167425, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_Name
+      value: VR Setup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497996630522167425, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824025855581563167, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e45a3d75419f4c3098a010ebc5400e2, type: 3}
 --- !u!1 &1109589520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,9 +3594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 2061024632}
-  newText: Jump onto the <b><color=yellow>yellow</color></b> button to unlock the
-    next door
-  textToBeChanged: {fileID: 686826614}
+  newText: 
+  textToBeChanged: {fileID: 0}
 --- !u!65 &1717868331
 BoxCollider:
   m_ObjectHideFlags: 0

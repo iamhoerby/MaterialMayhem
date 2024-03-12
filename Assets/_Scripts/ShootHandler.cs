@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.XR.Interaction.Toolkit.Inputs; 
 
 public class ShootHandler : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class ShootHandler : MonoBehaviour
     public GameObject bullet; 
     public float speed; 
     public InputActionProperty shootAction;
+    public InputActionProperty switchMaterialAction; 
+    bool switchActive = false; 
+    public customMaterial currentMaterial; 
     bool shotActive = false;
     //GameObject ammo;
     customMaterial[] materials = {
@@ -66,58 +69,7 @@ public class ShootHandler : MonoBehaviour
     }
     void shoot() {
         var instance = Instantiate(bullet,transform.position + transform.forward,Quaternion.identity);
+        instance.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
         instance.GetComponent<Rigidbody>().AddForce(transform.forward * speed,ForceMode.Force);
     }
-
-    void switchMaterial() {
-        
-
-
-
-       /*  int currentIndex = 0; 
-        foreach (var material in materials)
-        {
-            if (currentMaterial == material) { 
-                currentIndex++; 
-                if (currentIndex >= materials.Length) {
-                    currentIndex = 0; 
-                } 
-                currentMaterial = materials[currentIndex];
-                var xrcontroller = GameObject.Find("materialgun/Sphere"); 
-                xrcontroller.transform.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
-                return; 
-            } else {
-                currentIndex++; 
-                if (currentIndex >= materials.Length - 1) {
-                    currentIndex = 0; 
-                } 
-            }
-            if (currentIndex >= materials.Length) {
-                currentIndex = 0; 
-            }
-        } */
-    }
-
-static void PrintHierarchy()
-{
-    Debug.Log("Print object hierarchy");
-    foreach (var obj in SceneManager.GetActiveScene().GetRootGameObjects())
-    {
-        Debug.Log("Root object");
-        PrintChildren(obj.transform, "");
-    }
-}
-
-static void PrintChildren(Transform t, string indent)
-{
-    int child_count = t.childCount;
-    Debug.Log($"{indent}'{t.name}' has {child_count} children");
-
-    var more_indent = indent + "	";
-    for (int i = 0; i < child_count; ++i)
-    {
-        var child = t.GetChild(i);
-        PrintChildren(child, more_indent);
-    }
-}
 }
