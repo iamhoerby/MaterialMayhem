@@ -230,8 +230,6 @@ MonoBehaviour:
   m_Turn: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Shot: {fileID: 7067312214411174577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Jetpack: {fileID: -6467949723515440904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 1
 --- !u!114 &2949000353876649631
@@ -474,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378a3e8b33cc44a11bafa76d781d4755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelMax: 30
+  fuelMax: 3
   jetpackPower: 10
   player: {fileID: 4556396666237148998}
   jetpackAction:
@@ -542,17 +540,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTool: 0
   switchToolAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
-      m_Name: 
+      m_Name: Switch Tool
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: e7e74d28-8603-4c0b-aba0-87d4551dfd9d
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -7899974002853733325, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  grabingActionRight:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grabing Action Right
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6efa2316-2f58-4b1d-9303-9954c98e760a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  grabingActionLeft:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grabing Action Left
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 39272832-a63c-4ba5-a17a-a101420eed3b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &2949000353981040154
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +762,6 @@ GameObject:
   - component: {fileID: 2949000355512346239}
   - component: {fileID: 8833396763520370467}
   - component: {fileID: 2736356129684305366}
-  - component: {fileID: 4470249195030344230}
   m_Layer: 0
   m_Name: LeftHand (Smooth locomotion)
   m_TagString: Untagged
@@ -788,8 +809,6 @@ MonoBehaviour:
   m_Turn: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Shot: {fileID: 0}
-  m_Jetpack: {fileID: 0}
   m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
 --- !u!114 &2949000355512346239
@@ -1020,45 +1039,6 @@ MonoBehaviour:
   - {fileID: 1489350136178554824}
   - {fileID: 658838670374941514}
   - {fileID: 3105544236641962348}
---- !u!114 &4470249195030344230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2949000355512346212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cd97418b2d4294b89abdc79ce3e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  speed: 0
-  shootAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Shoot
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 087b01f9-c49e-40ee-b32e-eb8eedc323be
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  switchMaterialAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Switch Material
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: fb852254-2c2a-4b5b-992d-5ef83ff78906
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  currentMaterial: 0
 --- !u!1 &3497996630522167425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,8 +1148,8 @@ MonoBehaviour:
   m_System: {fileID: 9120876427338554877}
   m_TurnAmount: 45
   m_DebounceTime: 0.5
-  m_EnableTurnLeftRight: 1
-  m_EnableTurnAround: 1
+  m_EnableTurnLeftRight: 0
+  m_EnableTurnAround: 0
   m_DelayTime: 0
   m_LeftHandSnapTurnAction:
     m_UseReference: 1
@@ -1274,11 +1254,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 9120876427338554877}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 10
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
-  m_GravityApplicationMode: 0
+  m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 2949000353981040153}
   m_LeftHandMoveAction:
     m_UseReference: 1
@@ -1627,6 +1607,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2949000355512346235}
     m_Modifications:
+    - target: {fileID: 2761784063978902504, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902505, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2761784063978902506, guid: c1800acf6366418a9b5f610249000331, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1980,6 +1968,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2949000353876649626}
     m_Modifications:
+    - target: {fileID: 2761784063978902504, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902505, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2761784063978902506, guid: c1800acf6366418a9b5f610249000331, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2337,6 +2333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ray Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_TagString
+      value: RayInteractor
+      objectReference: {fileID: 0}
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2380,6 +2380,10 @@ PrefabInstance:
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462879561657043759, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad818c36731146e994540a1896ad8f24, type: 3}
@@ -2410,6 +2414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ray Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_TagString
+      value: RayInteractor
+      objectReference: {fileID: 0}
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2453,6 +2461,10 @@ PrefabInstance:
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462879561657043759, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad818c36731146e994540a1896ad8f24, type: 3}

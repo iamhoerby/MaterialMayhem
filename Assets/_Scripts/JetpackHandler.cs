@@ -22,8 +22,7 @@ public class JetpackHandler : MonoBehaviour
     void Update()
     {
         GameObject output = GameObject.Find("Fuel/BarCover"); 
-        //if (jetpackAction.action.IsPressed()) {
-        if (Input.GetButton("Jump")) {
+        if (jetpackAction.action.IsPressed()) {
             if (fuel > 0) {
                 fuel -= Time.deltaTime; 
                 thrust();
