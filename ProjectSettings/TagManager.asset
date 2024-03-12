@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Ground
   - Morphable
+  - Ammo
+  - RayInteractor
   layers:
   - Default
   - TransparentFX
