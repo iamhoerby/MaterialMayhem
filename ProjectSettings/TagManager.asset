@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Ground
   - Morphable
+  - Pickable
+  - canPickUp
   - Ammo
   - RayInteractor
   layers:
@@ -20,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - holdLayer
   - 
   - 
   - 

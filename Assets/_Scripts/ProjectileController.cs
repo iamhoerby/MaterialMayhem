@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    public float initialSpeed = 50f; // Initial speed of the projectile
-    public float gravity = 9.8f; // Gravity affecting the projectile
+    public float initialSpeed = 120f; // Initial speed of the projectile
+    public float gravity = 100f; // Gravity affecting the projectile
 
     private Rigidbody rb;
 
