@@ -11,6 +11,8 @@ TagManager:
   - Morphable
   - Pickable
   - canPickUp
+  - Ammo
+  - RayInteractor
   layers:
   - Default
   - TransparentFX

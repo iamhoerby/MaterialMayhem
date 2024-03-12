@@ -63,10 +63,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [Tooltip("The reference to the action of moving the XR Origin with this controller.")]
         InputActionReference m_Move;
 
-        [SerializeField]
-        [Tooltip("Pull Action")]
-        InputActionReference m_Pull;
-
         [Space]
         [Header("Locomotion Settings")]
 
@@ -310,7 +306,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             DisableAction(m_TeleportModeCancel);
             DisableAction(m_Turn);
             DisableAction(m_SnapTurn);
-            DisableAction(m_Pull);
         }
 
         static void SetEnabled(InputActionReference actionReference, bool enabled)
