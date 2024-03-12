@@ -16,7 +16,8 @@ public class FPSController : MonoBehaviour
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     public float projectileSpeed = 25f;
- 
+
+    public GameObject[] uiElements; // Array to store UI elements (max 6)
  
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
@@ -83,8 +84,6 @@ public class FPSController : MonoBehaviour
 
         #region Handles Shooting
 
-    
-
         if (isShootingUnlocked && Input.GetMouseButtonDown(0))
         {
             ShootProjectile();
@@ -101,14 +100,28 @@ public class FPSController : MonoBehaviour
         }
 
         #endregion
+
+        #region Handles toolbar and changing tool
+
+        for (int i = 0; i < uiElements.Length; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i)) // Check keys 1 to 6
+                {
+                    for (int j = 0; j < uiElements.Length; j++)
+                    {
+                        uiElements[j].SetActive(j == i); // Set active only for the pressed key
+                    }
+                }
+        }
+        
+        #endregion
+
     }
 
-    
-        public void UnlockShooting()
+    public void UnlockShooting()
         {
             isShootingUnlocked = true;
         }
-
-    
 }
+
  
