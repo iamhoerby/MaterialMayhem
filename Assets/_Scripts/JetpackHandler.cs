@@ -15,13 +15,15 @@ public class JetpackHandler : MonoBehaviour
     public InputActionProperty jetpackAction;
     void Start()
     {
-        
+        fuel = fuelMax; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (jetpackAction.action.IsPressed()) {
+        GameObject output = GameObject.Find("Fuel/BarCover"); 
+        //if (jetpackAction.action.IsPressed()) {
+        if (Input.GetButton("Jump")) {
             if (fuel > 0) {
                 fuel -= Time.deltaTime; 
                 thrust();
@@ -31,6 +33,8 @@ public class JetpackHandler : MonoBehaviour
                 fuel += Time.deltaTime; 
             }
         }
+        float percentage = fuel/fuelMax; 
+        output.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 18*(1-percentage));
         
     }
     void thrust() {
