@@ -247,7 +247,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3475118261464492563, guid: 5bbb77dcb9baf46d9860f196257f71a3, type: 3}
+  m_ModelPrefab: {fileID: 3475118261464492563, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
   m_ModelParent: {fileID: 2949000353876649626}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1095,7 +1095,7 @@ GameObject:
   - component: {fileID: 9120876427338554868}
   m_Layer: 2
   m_Name: XR Origin
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

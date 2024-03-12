@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
-using UnityEngine.SceneManagement; 
 
 public class ShootHandler : MonoBehaviour
 {
@@ -12,9 +11,6 @@ public class ShootHandler : MonoBehaviour
     public GameObject bullet; 
     public float speed; 
     public InputActionProperty shootAction;
-    public InputActionProperty switchMaterialAction; 
-    bool switchActive = false; 
-    public customMaterial currentMaterial; 
     bool shotActive = false;
     //GameObject ammo;
     customMaterial[] materials = {
@@ -70,7 +66,6 @@ public class ShootHandler : MonoBehaviour
     }
     void shoot() {
         var instance = Instantiate(bullet,transform.position + transform.forward,Quaternion.identity);
-        instance.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
         instance.GetComponent<Rigidbody>().AddForce(transform.forward * speed,ForceMode.Force);
     }
 
