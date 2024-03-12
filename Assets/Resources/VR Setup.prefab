@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1513265940185395597
 Transform:
   m_ObjectHideFlags: 0
@@ -180,8 +180,9 @@ GameObject:
   - component: {fileID: 2949000353876649631}
   - component: {fileID: 1436648569837123276}
   - component: {fileID: 8377294054534189268}
-  - component: {fileID: 6193628864727588934}
   - component: {fileID: 8802945040990942901}
+  - component: {fileID: 5659925049814895296}
+  - component: {fileID: 5881190587103258489}
   m_Layer: 0
   m_Name: RightHand (Teleport Locomotion)
   m_TagString: Untagged
@@ -461,32 +462,6 @@ MonoBehaviour:
   - {fileID: 3842793575189795793}
   - {fileID: 8865662511336014527}
   - {fileID: 2931649243078809063}
---- !u!114 &6193628864727588934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2949000353876649627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94cd97418b2d4294b89abdc79ce3e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 1077285045078116036, guid: 481eb952325be4237ad05d84e01a25ac, type: 3}
-  speed: 100
-  shootAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Shoot
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 83f1ea15-2929-4cee-af2e-db4eb0cc0b9d
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 7067312214411174577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &8802945040990942901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +489,70 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6467949723515440904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &5659925049814895296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949000353876649627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94cd97418b2d4294b89abdc79ce3e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1077285045078116036, guid: 481eb952325be4237ad05d84e01a25ac, type: 3}
+  speed: 100
+  shootAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Shoot
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 83f1ea15-2929-4cee-af2e-db4eb0cc0b9d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7067312214411174577, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  switchMaterialAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Switch Material
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d840b739-ab3f-49c5-bb02-1a3e756f0841
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 2941311500481397533, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  currentMaterial: 1
+--- !u!114 &5881190587103258489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949000353876649627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d330f10af6bfe40a19ffc6a274ea1e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTool: 0
+  switchToolAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &2949000353981040154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1046,19 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  switchMaterialAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Switch Material
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: fb852254-2c2a-4b5b-992d-5ef83ff78906
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  currentMaterial: 0
 --- !u!1 &3497996630522167425
 GameObject:
   m_ObjectHideFlags: 0

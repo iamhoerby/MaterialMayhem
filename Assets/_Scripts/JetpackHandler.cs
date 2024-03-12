@@ -22,7 +22,6 @@ public class JetpackHandler : MonoBehaviour
     void Update()
     {
         if (jetpackAction.action.IsPressed()) {
-            Debug.Log("Pressed");
             if (fuel > 0) {
                 fuel -= Time.deltaTime; 
                 thrust();
@@ -35,7 +34,6 @@ public class JetpackHandler : MonoBehaviour
         
     }
     void thrust() {
-        Debug.Log("Fuel: " + fuel);
         player.GetComponent<CharacterController>().Move(Vector3.up * jetpackPower * Time.deltaTime); 
     }
 }
