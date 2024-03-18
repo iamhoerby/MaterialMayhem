@@ -372,6 +372,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1267853012}
     m_Modifications:
+    - target: {fileID: 4323613496591809573, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323613496591809573, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809574, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_Name
       value: RubberTest
@@ -2747,6 +2755,19 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -946235882529794447, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  switchMaterialAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  currentMaterial: 0
 --- !u!114 &968970680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2996,7 +3017,6 @@ MonoBehaviour:
   m_Turn: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Pull: {fileID: 0}
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 1
 --- !u!1001 &1007632877
@@ -6183,7 +6203,6 @@ MonoBehaviour:
   m_Turn: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_Pull: {fileID: 0}
   m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
 --- !u!1001 &2065095382

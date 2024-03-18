@@ -35,10 +35,15 @@ public class PickUpScript : MonoBehaviour
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
                 {
                     //make sure pickup tag is attached
-                    if (hit.transform.gameObject.tag == "canPickUp")
+                    if (hit.transform.gameObject.tag == "Morphable" || hit.transform.gameObject.tag == "Handle")
                     {
                         //pass in object hit into the PickUpObject function
                         PickUpObject(hit.transform.gameObject);
+                    }
+                    if (hit.transform.gameObject.tag == "Button") 
+                    {
+                        Debug.Log("Button Hit");
+                        hit.transform.gameObject.GetComponent<ButtonController>().isClicked(); 
                     }
                 }
             }
@@ -81,7 +86,9 @@ public class PickUpScript : MonoBehaviour
         //re-enable collision with player
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObj.layer = 0; //object assigned back to default layer
-        heldObjRb.isKinematic = false;
+        if (heldObj.transform.gameObject.tag != "Handle") {
+            heldObjRb.isKinematic = false;
+        }
         heldObj.transform.parent = null; //unparent object
         heldObj = null; //undefine game object
     }
@@ -137,6 +144,6 @@ public class PickUpScript : MonoBehaviour
             //change object position to camera position 
             heldObj.transform.position = transform.position + new Vector3(0f, -0.1f, 0f); //offset slightly downward to stop object dropping above player 
             //if your player is small, change the -0.5f to a smaller number (in magnitude) ie: -0.1f
-        }
+        } 
     }
 }

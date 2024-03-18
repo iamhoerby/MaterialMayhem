@@ -15,6 +15,9 @@ public class HoneyFormable : MonoBehaviour
     int[] triangles; 
     void Start()
     {
+        transform.GetComponent<Rigidbody>().isKinematic = true; 
+        transform.GetComponent<Rigidbody>().useGravity = false; 
+        transform.gameObject.tag="Untagged";
         handlePrefab = Resources.Load("Handle") as GameObject; 
 
         vertices = GetComponent<MeshFilter>().mesh.vertices;
@@ -138,5 +141,8 @@ public class HoneyFormable : MonoBehaviour
             Debug.Log("handle destroy");
             Destroy(handle); 
         }
+        transform.gameObject.tag="Morphable";
+        transform.GetComponent<Rigidbody>().isKinematic = false; 
+        transform.GetComponent<Rigidbody>().useGravity = true; 
     }
 }

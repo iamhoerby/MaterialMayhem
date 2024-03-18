@@ -13,6 +13,9 @@ TagManager:
   - canPickUp
   - Ammo
   - RayInteractor
+  - Button
+  - Handle
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
+using UnityEngine.Events;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject door; // Reference to the door object
     private bool isPressed = false; // To check if the button is pressed
     public string newText;  // Text specific to this button
     public Text textToBeChanged;  // Reference to the UI text object
+    public UnityEvent buttonFunction;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -42,7 +44,20 @@ public class ButtonController : MonoBehaviour
         if (isPressed)
         {
             // Open the door (you can animate or move it)
-            door.SetActive(false); // For simplicity, this deactivates the door, you might want to animate it instead
+            buttonFunction.Invoke(); 
+            //activatedObject.SetActive(false); // For simplicity, this deactivates the door, you might want to animate it instead
+            isPressed = false; 
         }
+    }
+    public void isClicked() {
+        Debug.Log("is pressed");
+        isPressed = true; 
+    }
+    public void openDoor(GameObject Door) {
+        Door.SetActive(false);
+    }
+    public void restartLevel() {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

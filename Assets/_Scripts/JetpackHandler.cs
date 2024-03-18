@@ -11,6 +11,8 @@ public class JetpackHandler : MonoBehaviour
     public int fuelMax; 
     public float jetpackPower; 
     public GameObject player; 
+    float velocityNow;
+    public float velocityMax;  
     float fuel = 0.0f; 
     public InputActionProperty jetpackAction;
     void Start()
@@ -26,17 +28,25 @@ public class JetpackHandler : MonoBehaviour
             if (fuel > 0) {
                 fuel -= Time.deltaTime; 
                 thrust();
-            }           
+            } else {
+                velocityNow = 0.0f; 
+            }          
         } else {
             if (fuel < fuelMax) {
                 fuel += Time.deltaTime; 
-            }
+            } else {
+                velocityNow = 0.0f; 
+            }      
         }
         float percentage = fuel/fuelMax; 
         output.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 18*(1-percentage));
         
     }
     void thrust() {
-        player.GetComponent<CharacterController>().Move(Vector3.up * jetpackPower * Time.deltaTime); 
+        velocityNow += jetpackPower * Time.deltaTime; 
+        if (velocityNow > velocityMax) {
+            velocityNow = velocityMax; 
+        } 
+        player.GetComponent<CharacterController>().Move(Vector3.up * velocityNow); 
     }
 }

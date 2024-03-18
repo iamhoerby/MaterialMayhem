@@ -12,7 +12,7 @@ public class FPSController : MonoBehaviour
     public float gravity = 2f;
     public GameObject projectilePrefab; // Reference to the projectile prefab
     public Transform shootPoint; // Point from which the projectile is spawned
-    private bool isShootingUnlocked = false;
+    public bool isShootingUnlocked = false;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     public float projectileSpeed = 25f;
