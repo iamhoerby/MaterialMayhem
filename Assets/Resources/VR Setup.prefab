@@ -247,7 +247,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3475118261464492563, guid: 9f3369e30fbd31f4bb596b1a99babe83, type: 3}
+  m_ModelPrefab: {fileID: 3475118261464492563, guid: 5bbb77dcb9baf46d9860f196257f71a3, type: 3}
   m_ModelParent: {fileID: 2949000353876649626}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -472,9 +472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378a3e8b33cc44a11bafa76d781d4755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelMax: 3
-  jetpackPower: 10
+  fuelMax: 0.5
+  jetpackPower: 2
   player: {fileID: 4556396666237148998}
+  velocityMax: 0.2
   jetpackAction:
     m_UseReference: 1
     m_Action:

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/Tutorial PC.unity
     guid: b3acc004cd228400480e33757b322629
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial VR.unity
     guid: 33c8555ab7e444d94881a29855fe06d3
   - enabled: 1
