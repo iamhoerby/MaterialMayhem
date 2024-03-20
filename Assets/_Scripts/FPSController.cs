@@ -19,6 +19,7 @@ public class FPSController : MonoBehaviour
     public float lookXLimit = 45f;
     public float projectileSpeed = 25f;
 
+
     public GameObject[] uiElements; // Array to store UI elements (max 6)
     public Text currentBullet; // Text UI component 
     public string[] bulletNames; // Array of text options 
