@@ -26,7 +26,7 @@ public class PickUpScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1)) 
         {
             if (heldObj == null) //if currently not holding anything
             {
@@ -38,7 +38,9 @@ public class PickUpScript : MonoBehaviour
                     if (hit.transform.gameObject.tag == "Morphable" || hit.transform.gameObject.tag == "Handle")
                     {
                         //pass in object hit into the PickUpObject function
-                        PickUpObject(hit.transform.gameObject);
+                        if (player.transform.GetComponent<FPSController>().currentTool == tool.GrablingGloves) {
+                            PickUpObject(hit.transform.gameObject);
+                        }
                     }
                     if (hit.transform.gameObject.tag == "Button") 
                     {

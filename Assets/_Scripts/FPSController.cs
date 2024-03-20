@@ -18,6 +18,9 @@ public class FPSController : MonoBehaviour
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     public float projectileSpeed = 25f;
+    public tool currentTool = tool.MaterialGun; 
+    public GameObject toolUiMaterialGun; 
+    public GameObject toolUiGrablingGlove; 
 
 
     public GameObject[] uiElements; // Array to store UI elements (max 6)
@@ -89,7 +92,7 @@ public class FPSController : MonoBehaviour
 
         #region Handles Shooting
 
-        if (isShootingUnlocked && Input.GetMouseButtonDown(0))
+        if (isShootingUnlocked && Input.GetMouseButtonDown(0) && currentTool == tool.MaterialGun)
         {
             ShootProjectile();
         }
@@ -108,7 +111,18 @@ public class FPSController : MonoBehaviour
         }
 
         #endregion
+        #region Handles changing tool
 
+        if (Input.GetKeyDown(KeyCode.F)) {
+            if (currentTool == tool.MaterialGun) {
+                currentTool = tool.GrablingGloves; 
+            } else {
+                currentTool = tool.MaterialGun; 
+            }
+            UpdateToolUI(); 
+        }
+
+        #endregion
         #region Handles toolbar and changing tool
 
         for (int i = 0; i < uiElements.Length; i++)
@@ -129,9 +143,18 @@ public class FPSController : MonoBehaviour
     }
 
     public void UnlockShooting()
-        {
-            isShootingUnlocked = true;
+    {
+        isShootingUnlocked = true;
+    }
+    void UpdateToolUI() {
+        if (currentTool == tool.MaterialGun) {
+            toolUiMaterialGun.SetActive(true);
+            toolUiGrablingGlove.SetActive(false);
+        } else {
+            toolUiMaterialGun.SetActive(false);
+            toolUiGrablingGlove.SetActive(true);
         }
+    }
 }
 
  
