@@ -865,6 +865,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1077285045078116036, guid: 481eb952325be4237ad05d84e01a25ac, type: 3}
     - target: {fileID: 6161050203920135642, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
+      propertyPath: currentTool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161050203920135642, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
       propertyPath: currentBullet
       value: 
       objectReference: {fileID: 56030636}
