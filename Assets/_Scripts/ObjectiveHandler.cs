@@ -17,6 +17,7 @@ public class ObjectiveHandler : MonoBehaviour
         var lookPos = objective.transform.position - transform.position;
         var rotation = Quaternion.LookRotation(lookPos);
         rotation *= Quaternion.Euler(-90, 0, 0);
+
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1); 
     }
 }

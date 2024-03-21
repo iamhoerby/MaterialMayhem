@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
@@ -10,15 +11,22 @@ public class FPSController : MonoBehaviour
     public float runSpeed = 6f;
     public float jumpPower = 1f;
     public float gravity = 2f;
-    public GameObject projectilePrefab; // Reference to the projectile prefab
     public Transform shootPoint; // Point from which the projectile is spawned
+    public GameObject bullet;
+    public customMaterial currentMaterial;
     public bool isShootingUnlocked = false;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     public float projectileSpeed = 25f;
+    public tool currentTool = tool.MaterialGun; 
+    public GameObject toolUiMaterialGun; 
+    public GameObject toolUiGrablingGlove; 
+
 
     public GameObject[] uiElements; // Array to store UI elements (max 6)
- 
+    public Text currentBullet; // Text UI component 
+    public string[] bulletNames; // Array of text options 
+    public customMaterial[] bulletMaterials;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
  
@@ -31,6 +39,7 @@ public class FPSController : MonoBehaviour
         characterController = this.GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        UpdateToolUI(); 
     }
 
     
@@ -68,7 +77,7 @@ public class FPSController : MonoBehaviour
         }
  
         #endregion
- 
+
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
  
@@ -84,7 +93,7 @@ public class FPSController : MonoBehaviour
 
         #region Handles Shooting
 
-        if (isShootingUnlocked && Input.GetMouseButtonDown(0))
+        if (isShootingUnlocked && Input.GetMouseButtonDown(0) && currentTool == tool.MaterialGun)
         {
             ShootProjectile();
         }
@@ -95,12 +104,26 @@ public class FPSController : MonoBehaviour
             Quaternion headRotation = head.transform.rotation;
 
             // Spawn a new projectile with the same rotation as the head
-            GameObject newProjectile = Instantiate(projectilePrefab, shootPoint.position, headRotation);
+            GameObject newProjectile = Instantiate(bullet, shootPoint.position, headRotation);
+            newProjectile.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
             newProjectile.GetComponent<Rigidbody>().AddForce(head.transform.forward * projectileSpeed,ForceMode.Force);
+            
+            
         }
 
         #endregion
+        #region Handles changing tool
 
+        if (Input.GetMouseButtonDown(1)) {
+            if (currentTool == tool.MaterialGun) {
+                currentTool = tool.GrablingGloves; 
+            } else {
+                currentTool = tool.MaterialGun; 
+            }
+        }
+        UpdateToolUI(); 
+
+        #endregion
         #region Handles toolbar and changing tool
 
         for (int i = 0; i < uiElements.Length; i++)
@@ -111,6 +134,8 @@ public class FPSController : MonoBehaviour
                     {
                         uiElements[j].SetActive(j == i); // Set active only for the pressed key
                     }
+                    currentBullet.text = bulletNames[i]; 
+                    currentMaterial = bulletMaterials[i];
                 }
         }
         
@@ -119,9 +144,21 @@ public class FPSController : MonoBehaviour
     }
 
     public void UnlockShooting()
-        {
-            isShootingUnlocked = true;
-        }
+    {
+        isShootingUnlocked = true;
+    }
+    void UpdateToolUI() {
+        if (!isShootingUnlocked) {
+            toolUiMaterialGun.SetActive(false);
+            toolUiGrablingGlove.SetActive(false);
+        } else if (currentTool == tool.MaterialGun) {
+            toolUiMaterialGun.SetActive(true);
+            toolUiGrablingGlove.SetActive(false);
+        } else {
+            toolUiMaterialGun.SetActive(false);
+            toolUiGrablingGlove.SetActive(true);
+        } 
+    }
 }
 
  

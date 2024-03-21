@@ -17,7 +17,7 @@ public class ShootingUnlockButton : MonoBehaviour
             // Optionally, you can add visual feedback or deactivate the button
             gameObject.SetActive(false);
 
-            targetObject.SetActive(!targetObject.activeSelf); // Toggle visibility
+            // targetObject.SetActive(!targetObject.activeSelf); // Toggle visibility
 
             textToBeChanged.text = newText;
         }
