@@ -16,7 +16,6 @@ public class ButtonController : MonoBehaviour
             Debug.Log("Trigger" + other.transform.gameObject.name);
             isPressed = true;
             // You can add visual feedback here, e.g., change color or scale of the button
-            textToBeChanged.text = newText;
         }
 
         if (other.CompareTag("Bullet"))
@@ -55,6 +54,7 @@ public class ButtonController : MonoBehaviour
     }
     public void openDoor(GameObject Door) {
         Door.SetActive(false);
+        textToBeChanged.text = newText;
     }
     public void restartLevel() {
         Scene scene = SceneManager.GetActiveScene();

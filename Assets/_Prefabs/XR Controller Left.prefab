@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3772725146761626664}
   - component: {fileID: 1468897719049424480}
   - component: {fileID: 5535335198102619987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ice
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2725791852784862655}
   - component: {fileID: 6450695693219552921}
   - component: {fileID: 1183518622608891784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rubber
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 161315032195174346}
   - component: {fileID: 3798912281226561813}
   - component: {fileID: 76291006206042795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Honey
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 1126282835099178962}
   - component: {fileID: 8001511757037745055}
   - component: {fileID: 6782747226732126618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Metal
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   - component: {fileID: 3211541224124545301}
   - component: {fileID: 1254837659925806493}
   - component: {fileID: 3756835578698432044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Default
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 37dae05e784934d018bf6f8384ab285c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 8398895708215724761}
   - component: {fileID: 5210349203217534130}
   - component: {fileID: 405211626742898477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cardbord
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -1267,7 +1267,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8270855663187062767}
-  - component: {fileID: 6616264460219023646}
+  - component: {fileID: 5590371557003097052}
+  - component: {fileID: -2703553136246242707}
   m_Layer: 0
   m_Name: XR Controller Left
   m_TagString: Player
@@ -1293,7 +1294,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6616264460219023646
+--- !u!54 &5590371557003097052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758423527188247893}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &-2703553136246242707
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

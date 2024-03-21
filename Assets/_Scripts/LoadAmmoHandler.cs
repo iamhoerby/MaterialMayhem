@@ -19,16 +19,23 @@ public class LoadAmmoHandler : MonoBehaviour
     void Update()
     {
         if (switchMaterialAction.action.IsPressed()) {
-        // if (Input.GetButton("Jump")) {
-            RaycastHit hit;
+        //if (Input.GetButton("Jump")) {
+            //RaycastHit hit;
             Vector3 direction = transform.TransformDirection(Vector3.forward);
-            //Debug.DrawRay(transform.position, direction, Color.red,0.5f, true);
+            Debug.DrawRay(transform.position, direction, Color.red,0.5f, true);
+            RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, direction, out hit, 0.5f)) {
-                //Debug.Log(hit.transform.gameObject.GetComponent<AmmoHandler>().GetMaterial());
-                currentMaterial = hit.transform.gameObject.GetComponent<AmmoHandler>().GetMaterial();
-                this.transform.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
+            int layerMask = 1 << LayerMask.NameToLayer("Ammo");
+
+            if (Physics.Raycast(transform.position, direction, out hit, 0.5f, layerMask))
+            {
+                AmmoHandler ammoScript = hit.collider.gameObject.GetComponent<AmmoHandler>();
+                if (ammoScript != null)
+                {
+                    currentMaterial = ammoScript.GetMaterial();
+                }
             }
+            this.transform.GetComponent<BulletHandler>().SetMaterial(currentMaterial); 
         }
     }
     /* private void OnCollisionEnter(Collision other) {
