@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014847658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.56}
+  m_LocalPosition: {x: -0, y: 0, z: 3.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,12 +253,16 @@ MonoBehaviour:
   runSpeed: 25
   jumpPower: 10
   gravity: 20
-  projectilePrefab: {fileID: 1077285045078116036, guid: 481eb952325be4237ad05d84e01a25ac, type: 3}
   shootPoint: {fileID: 6161050205077157967}
+  bullet: {fileID: 1077285045078116036, guid: 481eb952325be4237ad05d84e01a25ac, type: 3}
+  currentMaterial: 1
   isShootingUnlocked: 0
   lookSpeed: 2
   lookXLimit: 45
   projectileSpeed: 500
+  currentTool: 0
+  toolUiMaterialGun: {fileID: 0}
+  toolUiGrablingGlove: {fileID: 0}
   uiElements:
   - {fileID: 0}
   - {fileID: 0}
@@ -266,6 +270,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  currentBullet: {fileID: 0}
+  bulletNames:
+  - <b>Default</b>
+  - <b>Honey</b>
+  - <b>Metal</b>
+  - <b>Ice</b>
+  - <b>Rubber</b>
+  - <b>Cardboard</b>
+  bulletMaterials: 010000000200000005000000040000000300000006000000
   canMove: 1
 --- !u!114 &3382767890116758771
 MonoBehaviour:
@@ -305,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161050205077157966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 1.09, z: 0.74999994}
+  m_LocalPosition: {x: 1.174, y: 1.09, z: 1.149}
   m_LocalScale: {x: 1.9999, y: 1.9999, z: 1.9999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -322,7 +335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6161050205229640732}
   - component: {fileID: 6161050205229640729}
-  - component: {fileID: 6161050205229640731}
   - component: {fileID: 1224190261}
   - component: {fileID: 1224190262}
   m_Layer: 0
@@ -392,14 +404,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6161050205229640731
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6161050205229640728}
-  m_Enabled: 1
 --- !u!114 &1224190261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6161050203920135641}
-  holdPos: {fileID: 0}
+  holdPos: {fileID: 2014847659}
   throwForce: 1000
   pickUpRange: 5
 --- !u!1 &6161050205292770231
@@ -503,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161050205292770231}
   m_LocalRotation: {x: -0, y: -0.7110443, z: -0, w: 0.70314723}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0.02}
+  m_LocalPosition: {x: 0.787, y: 0, z: 0.02}
   m_LocalScale: {x: 0.50002503, y: 0.50002503, z: 0.50002503}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -584,7 +588,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3581839256528427842}
   - component: {fileID: 3599207572209079026}
-  - component: {fileID: 3907131385473188293}
   - component: {fileID: 2105939201}
   - component: {fileID: 8294350940822836884}
   m_Layer: 0
@@ -652,14 +655,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3907131385473188293
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7285530447968345741}
-  m_Enabled: 1
 --- !u!114 &2105939201
 MonoBehaviour:
   m_ObjectHideFlags: 0
