@@ -50,7 +50,9 @@ public class MaterialImpactHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Mathf.Abs(transform.position.x) + Mathf.Abs(transform.position.y) + Mathf.Abs(transform.position.z) > 1000.0f){
+            Destroy(this); 
+        }
     }
     public void SetMaterial(customMaterial material) {
         currentMaterial = material; 

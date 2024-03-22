@@ -39,6 +39,7 @@ public class FPSController : MonoBehaviour
         characterController = this.GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        UpdateToolUI(); 
     }
 
     
@@ -76,7 +77,7 @@ public class FPSController : MonoBehaviour
         }
  
         #endregion
- 
+
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
  
@@ -113,14 +114,14 @@ public class FPSController : MonoBehaviour
         #endregion
         #region Handles changing tool
 
-        if (Input.GetKeyDown(KeyCode.F)) {
+        if (Input.GetMouseButtonDown(1)) {
             if (currentTool == tool.MaterialGun) {
                 currentTool = tool.GrablingGloves; 
             } else {
                 currentTool = tool.MaterialGun; 
             }
-            UpdateToolUI(); 
         }
+        UpdateToolUI(); 
 
         #endregion
         #region Handles toolbar and changing tool
@@ -147,13 +148,16 @@ public class FPSController : MonoBehaviour
         isShootingUnlocked = true;
     }
     void UpdateToolUI() {
-        if (currentTool == tool.MaterialGun) {
+        if (!isShootingUnlocked) {
+            toolUiMaterialGun.SetActive(false);
+            toolUiGrablingGlove.SetActive(false);
+        } else if (currentTool == tool.MaterialGun) {
             toolUiMaterialGun.SetActive(true);
             toolUiGrablingGlove.SetActive(false);
         } else {
             toolUiMaterialGun.SetActive(false);
             toolUiGrablingGlove.SetActive(true);
-        }
+        } 
     }
 }
 
