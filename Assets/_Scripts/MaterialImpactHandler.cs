@@ -122,6 +122,9 @@ public class MaterialImpactHandler : MonoBehaviour
     void setIce() {
         gameObject.GetComponent<MeshRenderer>().material = iceMaterial;
         gameObject.GetComponent<Collider>().material = icePhysic; 
+        gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = true;
+        gameObject.GetComponent<Collider>().material.bounciness = 0.1f; 
         gameObject.GetComponent<Rigidbody>().mass = defaultMass; 
     }
     void setMetal() {

@@ -15,6 +15,7 @@ public class HoneyFormable : MonoBehaviour
     int[] triangles; 
     void Start()
     {
+        transform.rotation = Quaternion.Euler(0,0,0);
         transform.GetComponent<Rigidbody>().isKinematic = true; 
         transform.GetComponent<Rigidbody>().useGravity = false; 
         transform.gameObject.tag="Untagged";
@@ -134,6 +135,7 @@ public class HoneyFormable : MonoBehaviour
             vertices[connectedVertices[i]] += movement; 
         }
         GetComponent<MeshFilter>().mesh.vertices = vertices;
+        GetComponent<MeshFilter>().mesh.RecalculateNormals();
     }
     public void OnDestroy() {
         foreach (GameObject handle in handles)

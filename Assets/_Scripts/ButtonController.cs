@@ -11,7 +11,7 @@ public class ButtonController : MonoBehaviour
     public UnityEvent buttonFunction;
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Morphable"))
         {
             Debug.Log("Trigger" + other.transform.gameObject.name);
             isPressed = true;
@@ -54,7 +54,7 @@ public class ButtonController : MonoBehaviour
     }
     public void openDoor(GameObject Door) {
         Door.SetActive(false);
-        textToBeChanged.text = newText;
+        //textToBeChanged.text = newText;
     }
     public void restartLevel() {
         Scene scene = SceneManager.GetActiveScene();
