@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
+
 
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
@@ -21,6 +23,7 @@ public class FPSController : MonoBehaviour
     public tool currentTool = tool.MaterialGun; 
     public GameObject toolUiMaterialGun; 
     public GameObject toolUiGrablingGlove; 
+    public GameObject materialUI; 
 
 
     public GameObject[] uiElements; // Array to store UI elements (max 6)
@@ -74,6 +77,10 @@ public class FPSController : MonoBehaviour
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
+        }
+        if (Input.GetButton("Restart")) {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
  
         #endregion
@@ -149,14 +156,17 @@ public class FPSController : MonoBehaviour
     }
     void UpdateToolUI() {
         if (!isShootingUnlocked) {
+            materialUI.SetActive(false);
             toolUiMaterialGun.SetActive(false);
             toolUiGrablingGlove.SetActive(false);
         } else if (currentTool == tool.MaterialGun) {
             toolUiMaterialGun.SetActive(true);
             toolUiGrablingGlove.SetActive(false);
+            materialUI.SetActive(true);
         } else {
             toolUiMaterialGun.SetActive(false);
             toolUiGrablingGlove.SetActive(true);
+            materialUI.SetActive(false);
         } 
     }
 }

@@ -22,14 +22,7 @@ public class goalHandler : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             particleSystem.GetComponent<ParticleSystem>().Play(); 
-            int currentScene = SceneManager.GetActiveScene().buildIndex;
-            if (currentScene < allScenes.Length) 
-            {
-                SceneManager.LoadScene(allScenes[currentScene + 1].buildIndex);
-            }
-            else {
-                print("Its last scene");
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

@@ -130,6 +130,11 @@ public class HoneyFormable : MonoBehaviour
         }
     }
     public void UpdateVertices(int[] connectedVertices, Vector3 movement) {
+        movement.x = movement.x / transform.localScale.x; 
+        movement.y = movement.y / transform.localScale.y; 
+        movement.z = movement.z / transform.localScale.z; 
+
+
         for (int i = 0; i < connectedVertices.Length; i++)
         {
             vertices[connectedVertices[i]] += movement; 

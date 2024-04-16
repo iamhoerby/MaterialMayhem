@@ -258,11 +258,12 @@ MonoBehaviour:
   currentMaterial: 1
   isShootingUnlocked: 0
   lookSpeed: 2
-  lookXLimit: 45
+  lookXLimit: 90
   projectileSpeed: 500
   currentTool: 0
   toolUiMaterialGun: {fileID: 0}
   toolUiGrablingGlove: {fileID: 0}
+  materialUI: {fileID: 0}
   uiElements:
   - {fileID: 0}
   - {fileID: 0}
