@@ -38,7 +38,6 @@ public class MaterialImpactHandler : MonoBehaviour
     bool isQuitting = false; 
     
 
-
     // Start is called before the first frame update
     void Start()
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43679684, g: 0.48442417, b: 0.5646785, a: 1}
+  m_IndirectSpecularColor: {r: 0.43679768, g: 0.4844252, b: 0.56468016, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.414446
+      value: -294.3
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1734,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6161050203920135647, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.4
+      value: -304.28552
       objectReference: {fileID: 0}
     - target: {fileID: 6161050203920135647, guid: 60ef91781533c4965b08a306d7d0e019, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2082,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.568779
+      value: -293.4543
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3473,7 +3473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543851084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.7, y: 4.67, z: -12.166}
+  m_LocalPosition: {x: 18.7, y: 4.67, z: -292.0515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6674,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.022615
+      value: -292.90814
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9608,7 +9608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415999674}
   m_LocalRotation: {x: 0.50195223, y: -0.49679568, z: 0.4637831, w: 0.53492355}
-  m_LocalPosition: {x: 209, y: -44.2, z: -122.3}
+  m_LocalPosition: {x: 209, y: -44.2, z: -402.18555}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12469,7 +12469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.27
+      value: -294.15552
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12601,7 +12601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976161722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -279.88553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13048,7 +13048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.726713
+      value: -294.61224
       objectReference: {fileID: 0}
     - target: {fileID: 4323613496591809577, guid: 939fb2cc6ced84221a36ba63505708c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13606,6 +13606,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ac7fed60f40024c24819f1ec2c083d80, type: 3}
+    - target: {fileID: 7779068019528829548, guid: 7af58bed89aa5473c8b78f9bf140a815, type: 3}
+      propertyPath: m_text
+      value: "<b>Controls</b>\nW-A-S-D : Move \nSpace : Jump\nLeft Mouse : Shoot
+        / Grab\nRight Mouse : Switch Tool \n1-6 : Switch Bullets\nF : Throw \nR :
+        Restart Level "
+      objectReference: {fileID: 0}
     - target: {fileID: 9016970341590014452, guid: 7af58bed89aa5473c8b78f9bf140a815, type: 3}
       propertyPath: m_Sprite
       value: 
