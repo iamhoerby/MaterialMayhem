@@ -35,36 +35,34 @@ public class ShootHandler : MonoBehaviour
     void Update()
     {
         if (transform.GetComponent<ToolHandler>().currentTool == tool.MaterialGun) {
-
-        
-        var ammo = GameObject.Find("materialgunL/Ammo");
-        
-        if (shootAction.action.IsPressed()) {
-            if (!shotActive) {
-                shotActive = true; 
-                shoot();
-            }           
-        } else {
-            if (shotActive) {
-                shotActive = false; 
-            }
-        }
-        if (switchMaterialAction.action.IsPressed()) {
-            // PrintHierarchy();
-            if (ammo) {
-                foreach(Transform child in ammo.transform) {
-                    child.gameObject.SetActive(true); // or false
+            var ammo = GameObject.Find("materialgunL/Ammo");
+            
+            if (shootAction.action.IsPressed()) {
+                if (!shotActive) {
+                    shotActive = true; 
+                    shoot();
+                }           
+            } else {
+                if (shotActive) {
+                    shotActive = false; 
                 }
             }
-        } else if (ammo) {
-            if (ammo.activeSelf) {
-                foreach(Transform child in ammo.transform) {
-                    child.gameObject.SetActive(false); // or false
+            if (switchMaterialAction.action.IsPressed()) {
+                // PrintHierarchy();
+                if (ammo) {
+                    foreach(Transform child in ammo.transform) {
+                        child.gameObject.SetActive(true); // or false
+                    }
                 }
-            }
-        } 
-        var xrcontroller = GameObject.Find("materialgun/Sphere"); 
-        currentMaterial = xrcontroller.transform.GetComponent<BulletHandler>().GetMaterial(); 
+            } else if (ammo) {
+                if (ammo.activeSelf) {
+                    foreach(Transform child in ammo.transform) {
+                        child.gameObject.SetActive(false); // or false
+                    }
+                }
+            } 
+            var xrcontroller = GameObject.Find("materialgun/Sphere"); 
+            currentMaterial = xrcontroller.transform.GetComponent<BulletHandler>().GetMaterial(); 
         }
     }
     void shoot() {

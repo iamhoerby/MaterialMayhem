@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     public string newText;  // Text specific to this button
     public Text textToBeChanged;  // Reference to the UI text object
     public UnityEvent buttonFunction;
+    public bool bulletCanHit; 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Morphable"))
@@ -19,7 +20,7 @@ public class ButtonController : MonoBehaviour
             textToBeChanged.text = newText;
         }
 
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet") && bulletCanHit)
         {
             isPressed = true;
             // You can add visual feedback here, e.g., change color or scale of the button
