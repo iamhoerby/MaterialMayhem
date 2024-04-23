@@ -38,7 +38,6 @@ public class MaterialImpactHandler : MonoBehaviour
     bool isQuitting = false; 
     
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -173,25 +172,6 @@ public class MaterialImpactHandler : MonoBehaviour
         }
         if (Mathf.Abs(velocityDifference.magnitude) >= impactLimit) {
             Destroy(gameObject); 
-        }
-    }
-    void OnApplicationQuit()
-    {
-        isQuitting = true;
-    }
-
-    private void OnDestroy() {
-            // Object is destroyed, respawn it
-            if (!isQuitting) {
-                Respawn();
-            }
- 
-    }
-    void Respawn() {
-        if (Application.isPlaying) {
-            Debug.Log("Respawn" + gameObject);
-            GameObject newObject = Instantiate(objectPrefab, originalPos, Quaternion.identity);
-            newObject.GetComponent<MaterialImpactHandler>().SetMaterial(currentMaterial);
         }
     }
 }

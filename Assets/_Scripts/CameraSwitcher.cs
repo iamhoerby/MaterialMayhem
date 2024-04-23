@@ -16,7 +16,7 @@ public class CameraSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) // Change this to your preferred key
+        if (Input.GetKeyDown(KeyCode.P)) // Change this to your preferred key
         {
             isThirdPerson = !isThirdPerson;
             firstPersonCamera.enabled = !isThirdPerson;
