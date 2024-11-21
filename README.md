@@ -1,6 +1,7 @@
 # Material Mayhem
 ## How to install
 Open the project with Unity Hub
+
 PC: 
 - Open the scene „_Scenes/PCFinal/1Tutorial PC“ 
 - Press „Play“ and play the game in the preview window
